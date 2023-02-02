@@ -1,33 +1,33 @@
-public class bubblesort {
+//Updated the java code with insertion sort code in branch b3
 
-	    void bubbleSorting(int arr[]){
-	        int n = arr.length;
+public class insertionsort {
 
-	        for (int i=0; i< n-1; i++){
-	            for (int j=0; j< n-i-1; j++){
-	                if (arr[j]>arr[j+1]){
-	                    int temp = arr[j];
-	                    arr[j] = arr[j+1];
-	                    arr[j+1]=temp;
-	                }
-	            }
-	        }
-	    }
+    void insertionSorting(int arr[]){
+        int n = arr.length;
 
-		void printArray(int arr[]){
-			int n = arr.length;
-			for (int i =0; i< n ; ++i){
-				System.out.println(arr[i]+ "");
-			}
-			System.out.println();
+        for (int i=1; i< n; ++i){
+        	int key = arr[i];
+        	int j = i-1;
+        while(j>=0 && arr[j]>key) {
+        	arr[j+1] = arr[j];
+        	j=j-1;
+        }
+        arr[j+1] = key;
+        }
+    }
+
+	void printArray(int arr[]){
+		int n = arr.length;
+		for (int i =0; i< n ; ++i){
+			System.out.println(arr[i]+ "");
 		}
-		
-	public static void main (String args[]){
-	    bubblesort obj = new bubblesort();
-	    int arr[] = {5,1,8,7,9};
-	    obj.bubbleSorting(arr);
-	    obj.printArray(arr);
+		System.out.println();
 	}
-
+	
+public static void main (String args[]){
+	insertionsort obj = new insertionsort();
+    int arr[] = {5,1,8,7,9};
+    obj.insertionSorting(arr);
+    obj.printArray(arr);
 }
-
+}
